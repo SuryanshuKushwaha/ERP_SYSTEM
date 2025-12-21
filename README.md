@@ -62,23 +62,74 @@ The ERP System simplifies internal business processes by providing role-based ac
 
 ERP_SYSTEM/
 │
-├── backend/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── middleware/
-│ ├── uploads/
-│ ├── package.json
+├── backend/                      # Backend (Node.js + Express)
+│   ├── config/                   # Database & app configuration
+│   │   └── db.js
+│   │
+│   ├── controllers/              # Business logic
+│   │   ├── authController.js
+│   │   ├── employeeController.js
+│   │   ├── leaveController.js
+│   │   ├── salaryController.js
+│   │   └── enquiryController.js
+│   │
+│   ├── middleware/               # Custom middlewares
+│   │   ├── authMiddleware.js     # JWT verification
+│   │   └── roleMiddleware.js     # Role-based access
+│   │
+│   ├── models/                   # MongoDB schemas
+│   │   ├── User.js
+│   │   ├── Employee.js
+│   │   ├── Leave.js
+│   │   ├── Salary.js
+│   │   └── Enquiry.js
+│   │
+│   ├── routes/                   # API routes
+│   │   ├── authRoutes.js
+│   │   ├── employeeRoutes.js
+│   │   ├── leaveRoutes.js
+│   │   ├── salaryRoutes.js
+│   │   └── enquiryRoutes.js
+│   │
+│   ├── uploads/                  # Uploaded files (PDFs)
+│   │   └── salary-slips/
+│   │
+│   ├── utils/                    # Helper functions
+│   │   └── pdfGenerator.js
+│   │
+│   ├── .env                      # Environment variables
+│   ├── .gitignore
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js                 # Entry point
 │
-├── frontend/
-│ ├── src/
-│ ├── public/
-│ ├── package.json
+├── frontend/                     # Frontend (React)
+│   ├── public/
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   ├── components/           # Reusable components
+│   │   ├── pages/                # Pages (Admin, Employee)
+│   │   │   ├── Login.jsx
+│   │   │   ├── AdminDashboard.jsx
+│   │   │   └── EmployeeDashboard.jsx
+│   │   │
+│   │   ├── services/             # API calls
+│   │   │   └── api.js
+│   │   │
+│   │   ├── context/              # Auth & global state
+│   │   ├── utils/
+│   │   ├── App.js
+│   │   └── index.js
+│   │
+│   ├── .gitignore
+│   ├── package.json
+│   └── package-lock.json
 │
+├── .gitignore                    # Root ignore file
 ├── README.md
+└── LICENSE
 
-yaml
-Copy code
 
 ---
 
@@ -154,3 +205,4 @@ If you want, I can:
 - Create **deployment instructions (Render / Vercel)**
 
 Just tell me 👍
+

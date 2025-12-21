@@ -1,5 +1,3 @@
-﻿# ERP-System
-
 # ERP_SYSTEM
 
 A full-stack **ERP (Enterprise Resource Planning) System** designed to digitize and automate organizational workflows such as HR management, employee services, and administrative operations.

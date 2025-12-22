@@ -54,7 +54,7 @@ flowchart LR
 
 ### Runtime detail
 
-- Frontend discovers backend via `window.__BACKEND_URL__ || 'http://localhost:5000'`.
+- Frontend discovers backend via `window.__BACKEND_URL__ || 'https://erp-system-jdr2.onrender.com'`.
 - Auth flow: backend issues JWTs; frontend uses localStorage for some lightweight role flags (`isAdmin`, `isManager`, `isEmployee`) for UI decisions. Backend role enforcement is recommended for production.
 
 ## 4. Data Models and APIs
@@ -89,7 +89,7 @@ Note: See `backend/server.js` for exact request/response shapes.
 ### 4.3 Example API call (salary slip)
 
 ```bash
-curl -X POST "http://localhost:5000/api/salary-slips" \
+curl -X POST "https://erp-system-jdr2.onrender.com/api/salary-slips" \
   -F "employeeName=John Doe" \
   -F "email=john@example.com" \
   -F "month=October" \
@@ -200,7 +200,7 @@ npm install
 npm run dev
 ```
 
-**Note:** Frontend uses `window.__BACKEND_URL__ || 'http://localhost:5000'`. When deploying, set `window.__BACKEND_URL__` or configure a reverse proxy.
+**Note:** Frontend uses `window.__BACKEND_URL__ || 'https://erp-system-jdr2.onrender.com'`. When deploying, set `window.__BACKEND_URL__` or configure a reverse proxy.
 
 ## 11. References
 
@@ -225,5 +225,5 @@ npm run dev
 
 ### B. Suggested validation commands
 
-- `curl 'http://localhost:5000/api/enquiries'`
-- `curl -X POST 'http://localhost:5000/api/applications' -F 'name=Test' -F 'resume=@resume.pdf'`
+- `curl 'https://erp-system-jdr2.onrender.com/api/enquiries'`
+- `curl -X POST 'https://erp-system-jdr2.onrender.com/api/applications' -F 'name=Test' -F 'resume=@resume.pdf'`

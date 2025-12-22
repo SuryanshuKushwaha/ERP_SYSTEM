@@ -12,7 +12,7 @@ const EnquiryDetail = () => {
   const fetchEnquiries = async (query = "") => {
     try {
       setLoading(true);
-      const res = await fetch(`http://localhost:5000/api/enquiries${query}`);
+      const res = await fetch(`https://erp-system-jdr2.onrender.com/api/enquiries${query}`);
       const data = await res.json();
       setEnquiries(data || []);
     } catch (err) {
@@ -24,7 +24,7 @@ const EnquiryDetail = () => {
 
   const markResolved = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/enquiries/${id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: 'Resolved' }) });
+      await fetch(`https://erp-system-jdr2.onrender.com/api/enquiries/${id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: 'Resolved' }) });
       fetchEnquiries();
     } catch (err) { console.error(err); }
   };

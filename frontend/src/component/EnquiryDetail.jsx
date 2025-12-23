@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { formatDateISOToDDMMYYYY } from "../utils/dateFormat";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = (typeof window !== 'undefined' && window.__BACKEND_URL__) || import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const EnquiryDetail = () => {
   const [enquiries, setEnquiries] = useState([]);
